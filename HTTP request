@@ -1,0 +1,7 @@
+import requests
+# 1 . Dispatch GET request ti GitHub API
+response = requests.get("https://api.github.com")
+#2.Inspect numeric status code
+print(response.status_code) 
+#3. Extract and parse JSON payload
+print(response.json()) 
