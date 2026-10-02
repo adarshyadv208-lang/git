@@ -7,9 +7,14 @@ app = Flask(__name__)
 def template():
     return render_template("index.html", name="This is change")
 
+@app.route("/newtemplates")
+def newtemplates():
+    return render_template("page.html")
+
 @app.route("/newtemplate")
 def newtemplate():
-    return render_template("page.html")
+    return render_template("newtemplate.html")
+
 
 @app.route("/submit", methods=["GET" , "POST"])
 def submit():
@@ -18,6 +23,24 @@ def submit():
         return f"Hello, {name}!"
     return render_template("form.html")
 
+# Home page
+@app.route("/")
+def home():
+    return "Python is installed in Flask"
+
+
+# Index template
+@app.route("/template")
+def templates():
+    return render_template("index.html", name="Bidhan")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+
+
+
 
